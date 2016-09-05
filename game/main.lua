@@ -79,7 +79,7 @@ function mainmenu:enter()
     init.menugraphics()
 
     if bgmtitle == nil then
-        bgmtitle = love.audio.newSource("bgm/title.wav")
+        bgmtitle = love.audio.newSource("bgm/title.ogg")
         bgmtitle:setLooping(true)
         bgmtitle:setVolume(0.75)
         bgmtitle:play()
@@ -162,7 +162,7 @@ function levelselect:enter(from, course)
     level1a.hover = true
 
     if bgmtitle == nil then
-		bgmtitle = love.audio.newSource("bgm/title.wav")
+		bgmtitle = love.audio.newSource("bgm/title.ogg")
         bgmtitle:setLooping(true)
         bgmtitle:setVolume(0.75)
         bgmtitle:play()
@@ -256,7 +256,7 @@ function puzzle:enter(from, level, gs, button)
         parse15x15()
     end
 
-    bgmjazz = love.audio.newSource("bgm/jazz.wav")
+    bgmjazz = love.audio.newSource("bgm/jazz.ogg")
     bgmjazz:setLooping(true)
     bgmjazz:setVolume(0.75)
     bgmjazz:play()
@@ -328,8 +328,6 @@ function puzzle:update(dt)
 	    end
 	
         toptimer.update(dt)
-	
-	    if mistake.happening == true then mistake.update(dt) end
 
 	    if love.mouse.isDown(key) then
   

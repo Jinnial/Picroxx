@@ -284,7 +284,7 @@ function drawbot.grid15(drawnumbers)
 	  drawbot.numberscolumn15(15, 349)
 	
 	end
-	
+
 	drawbot.cellTranslated(row1, 1, 153, 92)
 	drawbot.cellTranslated(row1, 2, 167, 92)
 	drawbot.cellTranslated(row1, 3, 181, 92)
@@ -541,25 +541,25 @@ function drawbot.grid15(drawnumbers)
 	  
 	end
 	
-	if mistake.happening == true and mistake.timeLoss == 2 then
-      love.graphics.setColor(255, 255, 255, mistake.alpha)
-	  love.graphics.draw(twoMin, gridx + mistake.x, gridy + mistake.y - mistake.speed)
-	  love.graphics.setColor(255, 255, 255, 255)
-	end
-	
-  if mistake.happening == true and mistake.timeLoss == 4 then
-	  love.graphics.setColor(255, 255, 255, mistake.alpha)
-	  love.graphics.draw(fourMin, gridx + mistake.x, gridy + mistake.y - mistake.speed)
-	  love.graphics.setColor(255, 255, 255, 255)
-	end  
-	
-  if mistake.happening == true and mistake.timeLoss == 8 then 
-	  love.graphics.setColor(255, 255, 255, mistake.alpha)
-	  love.graphics.draw(eightMin, gridx + mistake.x, gridy + mistake.y - mistake.speed) 
-	  love.graphics.setColor(255, 255, 255, 255)
-	end  	
-
   if cellhoverx ~= row0 and cellhovery ~= 0 then drawbot.cellHover() end
+
+  if mistake.happening == true and mistake.timeLoss == 2 then
+    love.graphics.setColor(unpack(mistakeAlpha))
+    love.graphics.draw(twoMin, gridx + mistake.x, gridy + mistake.y - mistakeSpeed[1])
+    love.graphics.setColor(255, 255, 255, 255)
+  end
+  
+  if mistake.happening == true and mistake.timeLoss == 4 then
+    love.graphics.setColor(unpack(mistakeAlpha))
+    love.graphics.draw(fourMin, gridx + mistake.x, gridy + mistake.y - mistakeSpeed[1])
+    love.graphics.setColor(255, 255, 255, 255)
+  end  
+  
+  if mistake.happening == true and mistake.timeLoss == 8 then 
+    love.graphics.setColor(unpack(mistakeAlpha))
+    love.graphics.draw(eightMin, gridx + mistake.x, gridy + mistake.y - mistakeSpeed[1]) 
+    love.graphics.setColor(255, 255, 255, 255)
+  end   
 	
 end
 

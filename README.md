@@ -11,3 +11,5 @@ To play it, you need a [homebrew-enabled Nintendo 3DS system](http://smealum.git
 The only thing I ask you when doing anything with the code, is that you don't come up with something like "Picroxx Plus!" with extra features that I was going to add anyway. If you want to help, please commit code here.
 
 Also, please excuse my awful coding. I'm still new to this.
+
+GBA Temp Link: [https://gbatemp.net/threads/picroxx-the-ultimate-picross-clone.412055/] (https://gbatemp.net/threads/picroxx-the-ultimate-picross-clone.412055/)

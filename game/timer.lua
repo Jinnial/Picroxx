@@ -36,9 +36,9 @@ function toptimer.clear()
 
 end
 
-function toptimer.update(dttoptimer)
+function toptimer.update(dt)
 
-toptimer.frame = toptimer.frame + dttoptimer
+toptimer.frame = toptimer.frame + dt
 
 if toptimer.frame >= 1 then
   toptimer.seconds1 = toptimer.seconds1 + 1
@@ -91,15 +91,22 @@ mistake = {}
 
 mistake.happening = false
 mistake.timeLoss = 0
-mistake.speed = 0
 mistake.x = 0
 mistake.y = 0
-mistake.alpha = 255
+
+mistakeSpeed = {0}
+mistakeAlpha = {255, 255, 255, 255}
 
 function mistake.pop()
 
-  mistake.speed = 0
-  mistake.alpha = 255
+  mistakeSpeed = {0}
+  mistakeAlpha = {255, 255, 255, 255}
+  
+  Timer.after(2, function() 
+  
+    mistake.happening = false
+  
+  end)
 
   if mistake.timeLoss == 0 then
     mistake.timeLoss = 2 
@@ -110,6 +117,7 @@ function mistake.pop()
   end
   
   mistake.happening = true
+  animation.mistake()
   
   toptimer.realminutes = toptimer.realminutes + mistake.timeLoss
   toptimer.minutes1 = toptimer.minutes1 + mistake.timeLoss
@@ -119,15 +127,4 @@ function mistake.pop()
 	toptimer.minutes2 = toptimer.minutes2 + 1
   end
 
-end
-
-function mistake.update(dtfix)
-
-  if mistake.speed >= 15 then
-    mistake.happening = false
-  end
-
-  mistake.speed = mistake.speed + dtfix * 10
-  mistake.alpha = mistake.alpha - mistake.speed * 0.35
-  
 end

@@ -97,24 +97,25 @@ function drawbot.grid5(drawnumbers)
 	  drawbot.pauseoverlay()
 	  
 	end
+
 	
-	if mistake.happening == true and mistake.timeLoss == 2 then
-      love.graphics.setColor(255, 255, 255, mistake.alpha)
-	  love.graphics.draw(twoMin, mistake.x, mistake.y - mistake.speed)
-	  love.graphics.setColor(255, 255, 255, 255)
-	end
-	
+    if mistake.happening == true and mistake.timeLoss == 2 then
+        love.graphics.setColor(unpack(mistakeAlpha))
+        love.graphics.draw(twoMin, gridx + mistake.x, gridy + mistake.y - mistakeSpeed[1])
+        love.graphics.setColor(255, 255, 255, 255)
+    end
+  
     if mistake.happening == true and mistake.timeLoss == 4 then
-	  love.graphics.setColor(255, 255, 255, mistake.alpha)
-	  love.graphics.draw(fourMin, mistake.x, mistake.y - mistake.speed)
-	  love.graphics.setColor(255, 255, 255, 255)
-	end  
-	
+        love.graphics.setColor(unpack(mistakeAlpha))
+        love.graphics.draw(fourMin, gridx + mistake.x, gridy + mistake.y - mistakeSpeed[1])
+        love.graphics.setColor(255, 255, 255, 255)
+    end  
+  
     if mistake.happening == true and mistake.timeLoss == 8 then 
-	  love.graphics.setColor(255, 255, 255, mistake.alpha)
-	  love.graphics.draw(eightMin, mistake.x, mistake.y - mistake.speed) 
-	  love.graphics.setColor(255, 255, 255, 255)
-	end  
+        love.graphics.setColor(unpack(mistakeAlpha))
+        ove.graphics.draw(eightMin, gridx + mistake.x, gridy + mistake.y - mistakeSpeed[1]) 
+        love.graphics.setColor(255, 255, 255, 255)
+    end  	
 	
 end
 
